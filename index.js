@@ -19,7 +19,7 @@ class ProgressiveInput extends Component {
     clearButtonColor: PropTypes.string,
     clearButtonSize: PropTypes.number,
     clearButtonStyle: PropTypes.object,
-    activityIndicatorStyle: ActivityIndicator.propTypes.style,
+    //activityIndicatorStyle: ActivityIndicator.propTypes.style,
     onBlur: PropTypes.func,
     onChangeText: PropTypes.func,
     onFocus: PropTypes.func,
@@ -44,8 +44,8 @@ class ProgressiveInput extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ value: nextProps.value });
+  static getDerivedStateFromProps(nextProps) {
+     return { value: nextProps.value };
   }
 
   clearInput() {
